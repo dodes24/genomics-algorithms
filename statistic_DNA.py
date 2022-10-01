@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # encoding=utf-8
-
+# Created by: xfulop
 """
 basic fasta file statistics (sequence length, ACGT composition, ambiguous bases, checksum)
 (output from reformat_DNA and compare with mm_pax6.fasta)
@@ -9,8 +9,16 @@ from collections import Counter
 import sys
 import binascii
 import textwrap
+import argparse
+
 sequence = ''
 wrapper = textwrap.TextWrapper(width=70)
+
+parser = argparse.ArgumentParser(description='This script is used to print some basic statistics about sequence .\
+                                            It can be used just with stdin and you have to redirect output to a file.\
+                                            Example: cat dna.fasta | ./statistic_DNA.py > statistics.txt')
+
+args = parser.parse_args()
 
 
 for line in sys.stdin:

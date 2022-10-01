@@ -1,5 +1,9 @@
-# encoding=utf-8
 #!/bin/bash
+# Created by: xfulop
+
+# This script is used to reformat DNA or AA sequences and create a fasta file.
+# Example: cat file.txt | ./reformat.sh > file.fasta
+#          cat file.txt | ./reformat.sh -a | ./statistic_DNA.sh
 
 if [ $# -ne 1 ]; then
     echo $"> SEQ"
